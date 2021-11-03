@@ -131,6 +131,7 @@ app.get("/emp", function (req, res) {
     "select * from employees where role=2",
     function (error, results, fields) {
       if (error) throw error;
+      console.log(results);
       res.end(JSON.stringify(results));
     }
   );

@@ -1,13 +1,31 @@
+import '@coreui/coreui/dist/css/coreui.min.css';
 import React, {useState, useEffect} from 'react';
 import Axios from 'axios';
-import '@coreui/coreui/dist/css/coreui.min.css'
 
+function Login() {
+
+const [emplist, setEmplist] = useState([]);
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [role, setRole] = useState("");
+
+useEffect(() => {
+  Axios.get('http://127.0.0.1:8080/users').then((response) => {
+    console.log(response.data);
+    setEmplist(response.data);
+  });
+}, []);
 
 const submitFun = () => {
-
+    Axios.post('http://127.0.0.1:8080/emp',{
+        name : "Kalpana",
+        email : "abcd@gmail.com",
+        role : "2"
+    }).then( () => {
+        alert("Sucessfull !!!");
+    });
 }
 
-const Login = () => {
     return (
         <div class="col-sm-6" > 
         <div class="card">
@@ -31,3 +49,9 @@ const Login = () => {
 
 
 export default Login;
+
+/* <button onClick={submitFun}> CLick</button>
+{emplist.map((val) => {
+    return <h2> ** {val.name} -- {val.email}</h2>
+})}
+*/
