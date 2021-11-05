@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SubmitReview></SubmitReview>
+        <SubmitFeedback></SubmitFeedback>
       </header>
     </div>
   );

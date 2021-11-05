@@ -1,6 +1,6 @@
 import '@coreui/coreui/dist/css/coreui.min.css';
 
-const SubmitFeedback= () => {
+const SubmitFeedback= (reviewId) => {
     return (
         <div className="col-sm-6" >
         <div className="card">

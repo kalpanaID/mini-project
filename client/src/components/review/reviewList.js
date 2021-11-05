@@ -5,14 +5,14 @@ import Axios from 'axios';
 
 function Reviews () {
 
-    const [reviewlist, setReviewlist] = useState([]);
+const [reviewlist, setReviewlist] = useState([]);
 
-    useEffect(() => {
-        Axios.get('http://127.0.0.1:8080/review').then((response) => {
-          console.log(response.data);
-          setReviewlist(response.data);
-        });
-      }, []);
+useEffect(() => {
+    Axios.get('http://127.0.0.1:8080/review').then((response) => {
+        console.log(response.data);
+        setReviewlist(response.data);
+    });
+}, []);
 
     return (
         <div className="col-sm-6" >
