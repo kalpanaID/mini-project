@@ -24,7 +24,7 @@ useEffect(() => {
 const loginHandler = event =>{
     event.preventDefault();
     console.log(user);
-    if(user == 'null'){
+    if(user === 'null'){
         alert("Please select the user!!")
     }else{
         loginUser(user);
@@ -32,11 +32,10 @@ const loginHandler = event =>{
 }
 
 
-const loginUser = (id) => {
-    Axios.post('http://127.0.0.1:8080/emp',{
-        name : "Kalpana",
-        email : "abcd@gmail.com",
-        role : "2"
+const loginUser = (data) => {
+    Axios.post('http://127.0.0.1:8080/login',{
+        username : data,
+        password : "abc"
     }).then( () => {
         alert("Sucessfull !!!");
     });

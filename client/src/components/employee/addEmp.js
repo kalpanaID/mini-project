@@ -2,8 +2,7 @@ import '@coreui/coreui/dist/css/coreui.min.css';
 import React, {useState, useEffect, useRef} from 'react';
 import Axios from 'axios';
 
-
-function UpdateEmp() {
+const AddEmp = () => {
 
 const [name, setName] = useState('');
 const [email, setEmail] = useState('');
@@ -19,7 +18,7 @@ const roleSelectedHandler = event =>{
     setRole(event.target.value);
 }
 
-const updateEmployeeHandler = event =>{
+const addEmployeeHandler = event =>{
     event.preventDefault();
     console.log(name , email, role);
 
@@ -32,12 +31,11 @@ const updateEmployeeHandler = event =>{
         role : role
     }
     
-    updateEmployee(userData);
+    addEmployee(userData);
 }
 
-const updateEmployee = (data) => {
-    Axios.put('http://127.0.0.1:8080/emp',{
-        emp_id : 25,
+const addEmployee = (data) => {
+    Axios.post('http://127.0.0.1:8080/emp',{
         name : data.name,
         email : data.email,
         role : data.role
@@ -50,7 +48,7 @@ const updateEmployee = (data) => {
         <div className="col-sm-6" >
         <div className="card">
         <div className="card-body">
-            <h3>Update Employee Info</h3>
+            <h3>Add Employee / Admin</h3>
             <div className='div'></div>
             <div className="input-group mb-3">
                 <span className="input-group-text" id="basic-addon1">*</span>
@@ -62,14 +60,14 @@ const updateEmployee = (data) => {
             </div>
             <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">#</span>
-            <select className="form-select" onChange={roleSelectedHandler} aria-label="Default select example" >
+            <select className="form-select" aria-label="Default select example" onChange={roleSelectedHandler}>
                 <option defaultValue="null" value='0'>Select User</option>
                 <option value="1">Admin</option>
                 <option value="2">Employee</option>
             </select>
             </div>
             <div className="d-grid gap-2 col-12 mx-auto">
-                <button className="btn btn-primary" onClick={updateEmployeeHandler} type="button">Update</button>
+                <button className="btn btn-primary" type="button" onClick={addEmployeeHandler}>ADD</button>
             </div>
         </div>
         </div>
@@ -77,4 +75,4 @@ const updateEmployee = (data) => {
     );
 }
 
-export default UpdateEmp; 
+export default AddEmp; 
