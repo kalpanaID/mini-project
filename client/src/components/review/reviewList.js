@@ -15,15 +15,15 @@ function Reviews () {
       }, []);
 
     return (
-        <div class="col-sm-6" >
-        <div class="card">
-        <div class="card-body">
-        <div class="same-line">
+        <div className="col-sm-6" >
+        <div className="card">
+        <div className="card-body">
+        <div className="same-line">
             <h3>Assigned Reviews</h3>
         </div>
         <div className='div'></div>
         <div className='child'></div>
-        <table class="table table-hover">
+        <table className="table table-hover">
         <thead>
         <tr>
             <th scope="col">Review Id</th>

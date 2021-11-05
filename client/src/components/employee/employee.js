@@ -16,15 +16,15 @@ function Employees () {
       }, []);
 
     return (
-        <div class="col-sm-6" >
-        <div class="card">
-        <div class="card-body">
-        <div class="same-line">
-            <h3>Employees</h3> <button class="btn btn-primary" type="button">Add</button>
+        <div className="col-sm-6" >
+        <div className="card">
+        <div className="card-body">
+        <div className="same-line">
+            <h3>Employees</h3> <button className="btn btn-primary" type="button">Add</button>
         </div>
         <div className='div'></div>
         <div className='child'></div>
-        <table class="table table-hover">
+        <table className="table table-hover">
         <thead>
         <tr>
             <th scope="col">Emp Id</th>
@@ -36,7 +36,7 @@ function Employees () {
         <tbody>
         {emplist.map((val) => {
             return (
-            <tr>
+            <tr key={val.emp_id}>
                 <th scope="row">{val.emp_id}</th>
                 <td>{val.name}</td>
                 <td>{val.email}</td>

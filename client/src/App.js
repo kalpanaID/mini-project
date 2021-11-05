@@ -16,16 +16,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Header1></Header1>
-        <div className='div'> </div>
-        <div className='div'> </div>
-        <div className='div'> </div>
         <LoginPage></LoginPage>
         <Employees></Employees>
-        <Reviews></Reviews>
-        <UpdateEmp></UpdateEmp>
-        <SubmitFeedback></SubmitFeedback>
-        <SubmitReview></SubmitReview>
       </header>
     </div>
   );
